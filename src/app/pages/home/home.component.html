@@ -1,0 +1,291 @@
+<main class="main-section">
+
+
+    <section class="banner-section">
+        <div class="banner-image">
+            <img src="assets/images/background.jpg" alt="background">
+        </div>
+        <div class="container">
+            <div class="banner-content">
+                <h1>Find a Doctor
+                    <span> at your fingertips</span>
+                </h1>
+                <div class="content-wrapper three-grid">
+                    <mat-form-field>
+                        <label for="symptoms"><img src="assets/images/symptoms.svg" alt=""></label>
+                        <mat-select placeholder="Symptoms">
+                            @for (symptom of Symptoms; track symptom) {
+                            <mat-option [value]="symptom.value">{{symptom.viewValue}}</mat-option>
+                            }
+                        </mat-select>
+                    </mat-form-field>
+                    <mat-form-field>
+                        <label for="specialty"><img src="assets/images/first-aid-kit.svg" alt=""></label>
+                        <mat-select placeholder="Specialty">
+                            @for (specialty of Specialty; track specialty) {
+                            <mat-option [value]="specialty.value">{{specialty.viewValue}}</mat-option>
+                            }
+                        </mat-select>
+                    </mat-form-field>
+                    <mat-form-field>
+                        <label for="gender"><img src="assets/images/gender-symbols.svg" alt=""></label>
+                        <mat-select placeholder="Gender">
+                            @for (gender of Gender; track gender) {
+                            <mat-option [value]="gender.value">{{gender.viewValue}}</mat-option>
+                            }
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+                <div class="content-wrapper two-grid">
+                    <mat-form-field>
+                        <label for="symptoms"><img src="assets/images/location.svg" alt=""></label>
+                        <input type="text" matInput formControlName="stateGroup" required [matAutocomplete]="autoGroup"
+                            placeholder="Search by city or state">
+                        <mat-autocomplete #autoGroup="matAutocomplete">
+                            @for (group of stateGroupOptions | async; track group) {
+                            <mat-optgroup [label]="group.letter">
+                                @for (name of group.names; track name) {
+                                <mat-option [value]="name">{{name}}</mat-option>
+                                }
+                            </mat-optgroup>
+                            }
+                        </mat-autocomplete>
+                    </mat-form-field>
+
+                    <mat-form-field class="example-full-width">
+                        <input matInput [matDatepicker]="picker" placeholder="Availability">
+                        <mat-datepicker-toggle matIconPrefix [for]="picker">
+                        </mat-datepicker-toggle>
+                        <mat-datepicker #picker></mat-datepicker>
+                    </mat-form-field>
+                </div>
+
+                <div class="button-wrapper">
+                    <button class="yellow-btn" mat-raised-button>Book a Consultant</button>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="easy-steps-section">
+        <div class="container">
+            <div class="heading margin-bottom">
+                <h2>4 Easy Steps & Get Your Solutions</h2>
+            </div>
+            <div class="card-wrapper">
+                <div class="card-inner">
+                    <mat-card>
+                        <div class="image-block"><img src="assets/images/doctor.svg" alt="doctor"></div>
+                        <h3>Check <span> Doctor Profile </span></h3>
+                        <mat-card-content>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                            tempo.</mat-card-content>
+                    </mat-card>
+                </div>
+                <div class="card-inner">
+                    <mat-card>
+                        <div class="image-block"><img src="assets/images/shape.svg" alt="shape"></div>
+                        <h3>Request <span>Consultation</span></h3>
+                        <mat-card-content>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi
+                            ut.</mat-card-content>
+                    </mat-card>
+                </div>
+                <div class="card-inner">
+                    <mat-card>
+                        <div class="image-block"><img src="assets/images/file-medical.svg" alt="medical"></div>
+                        <h3>Receive <span>Consultation</span></h3>
+                        <mat-card-content>Duis aute irure dolor in repre henderit in voluptate velit esse cillum
+                            dolore.</mat-card-content>
+                    </mat-card>
+                </div>
+                <div class="card-inner">
+                    <mat-card>
+                        <div class="image-block"><img src="assets/images/stethoscope.svg" alt="stethoscope"></div>
+                        <h3>Get <span>Your Solution</span></h3>
+                        <mat-card-content>Excepteur sint occaecat cupi datat non proident, sunt in culpa qui
+                            officia.</mat-card-content>
+                    </mat-card>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+    <section class="meet-our-doctors-section">
+        <div class="container">
+            <div class="heading">
+                <h2>Meet our doctors</h2>
+                <div class="button-wrapper">
+                    <a href="#" class="yellow-btn" mat-raised-button title="See All Doctors">See All Doctors</a>
+                </div>
+            </div>
+            <div class="card-wrapper">
+                <div class="card-inner">
+                    <mat-card>
+                        <div class="image-block"><img src="../../../assets/images/doctor1.jpg" alt="doctor1"> </div>
+                        <h4>Dr. Smeeth Chessy</h4>
+                        <span>Neurologist</span>
+                        <p>Aestrolic Clinic</p>
+                        <p> 22H New York</p>
+                        <em><img src="../../../assets/images/star.svg" alt="star"><span>4.2</span></em>
+
+                    </mat-card>
+                </div>
+                <div class="card-inner">
+                    <mat-card>
+                        <div class="image-block"><img src="../../../assets/images/doctor2.jpg" alt="doctor2"> </div>
+                        <h4>Dr. Jeclina Tueck</h4>
+                        <span>Dentist</span>
+                        <p>Aone Hospital</p>
+                        <p>22H New York</p>
+                        <em><img src="../../../assets/images/star.svg" alt="star"><span>4.2</span></em>
+
+                    </mat-card>
+                </div>
+                <div class="card-inner">
+                    <mat-card>
+                        <div class="image-block"><img src="../../../assets/images/doctor3.jpg" alt="doctor3"> </div>
+                        <h4>Dr. Deniz Warren</h4>
+                        <span>Cardiologist</span>
+                        <p>Heart Plus Hospital</p>
+                        <p> San Francisco</p>
+                        <em><img src="../../../assets/images/star.svg" alt="star"><span>4.2</span></em>
+
+                    </mat-card>
+                </div>
+                <div class="card-inner">
+                    <mat-card>
+                        <div class="image-block"><img src="../../../assets/images/doctor4.jpg" alt="doctor4"> </div>
+                        <h4>Dr. Smeeth Chessy</h4>
+                        <span>Neurologist</span>
+                        <p>Aestrolic Clinic</p>
+                        <p> 22H New York</p>
+                        <em><img src="../../../assets/images/star.svg" alt="star"><span>4.2</span></em>
+
+                    </mat-card>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="top-searched-specialties-section">
+        <div class="container">
+            <div class="heading margin-bottom">
+                <h2>Top-searched specialties</h2>
+            </div>
+            <div class="card-wrapper">
+                <div class="card-inner">
+                    <mat-card>
+                        <div class="image-block">
+                            <img src="../../../assets/images/primary-care.svg" alt="primary-care">
+                        </div>
+                        <span>Primary Care</span>
+                    </mat-card>
+                </div>
+                <div class="card-inner">
+                    <mat-card>
+                        <div class="image-block">
+                            <img src="../../../assets/images/dentist.svg" alt="dentist">
+                        </div>
+                        <span>Dentist</span>
+                    </mat-card>
+                </div>
+                <div class="card-inner">
+                    <mat-card>
+                        <div class="image-block">
+                            <img src="../../../assets/images/ob-gyn.svg" alt="ob-gyn">
+                        </div>
+                        <span>OB-GYN</span>
+                    </mat-card>
+                </div>
+                <div class="card-inner">
+                    <mat-card>
+                        <div class="image-block">
+                            <img src="../../../assets/images/dermatology.svg" alt="dermatology">
+                        </div>
+                        <span>Dermatologist</span>
+                    </mat-card>
+                </div>
+                <div class="card-inner">
+                    <mat-card>
+                        <div class="image-block">
+                            <img src="../../../assets/images/psychiatrist.svg" alt="psychiatrist">
+                        </div>
+                        <span>Psychiatrist</span>
+                    </mat-card>
+                </div>
+                <div class="card-inner">
+                    <mat-card>
+                        <div class="image-block">
+                            <img src="../../../assets/images/plastic-surgeon.svg" alt="plastic-surgeon">
+                        </div>
+                        <span>Plastic Surgeon</span>
+                    </mat-card>
+                </div>
+
+            </div>
+        </div>
+
+    </section>
+    <section class="change-your-life-section">
+        <div class="container">
+            <div class="background-image">
+                <div class="heading">
+                    <h2>It's Time To Change Your  <span>Life Today</span></h2>
+                    <div class="button-wrapper">
+                        <a href="#" class="yellow-btn" mat-raised-button title="See All Doctors">
+                            <span>Get Consultants</span>
+                            <img src="../../../assets/images/arrow.svg" alt="arrow">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="video-content-section">
+        <div class="container">
+            <div class="heading">
+                <h2>FEED</h2>
+                <a href="" class="yellow-btn" title="See All Feeds" mat-raised-button>See All Feeds</a>
+            </div>
+            <mat-card>
+                <div class="profile-wrapper">
+                    <div class="left-side">
+                        <div class="image-block">
+                            <img src="../../../assets/images/user.png" alt="user">
+                        </div>
+                        <div class="name-active-status">
+                            <span>Stellina Parker</span>
+                            <p>14 Mins ago</p>
+                        </div>
+                    </div>
+                  
+                        <div class="button-wrapper">
+                            <a href="#" title="Follow" class="btn" mat-stroked-button>FOLLOW</a>
+                        </div>
+                  
+                </div>
+                <div class="video-content-wrapper">
+                    <div class="video-content">
+                        <div class="poster-image">
+                            <img src="../../../assets/images/video-image.jpg" alt="video-image">
+                        </div>
+                        <span><img src="images/play-btn.svg" alt="play-btn" data-link="open-modal"
+                                class="play-btn"></span>
+                    </div>
+                    <h5>Every Health Plan Stands To Benefit From A Nudge Unit</h5>
+
+
+                    <p class="more-less">Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                        Lorem Ipsum has
+                        been the industry's standard dummy text ever since the 1500s, when an unknown printer took a
+                        galley of type and scrambled it to make a type specimen book. It has survived not only five
+                        centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
+                        It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum
+                        passages, and more recently with desktop publishing software like Aldus PageMaker including
+                        versions of Lorem Ipsum.</p>
+                    <a href="" class="moreless-btn">Read more</a>
+
+                </div>
+            </mat-card>
+    
+        </div>
+    </section>
+</main>

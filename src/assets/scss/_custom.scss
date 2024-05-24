@@ -1,0 +1,381 @@
+.container {
+    max-width: 1240px;
+    margin: 0 auto;
+    padding: 0 50px;
+    width: 100%;
+}
+
+.heading {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-bottom: 30px;
+
+    &.margin-bottom {
+        margin-bottom: 40px;
+    }
+}
+
+
+.site-header {
+    padding: 30px 0;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    z-index: 1200;
+    transition: all 0.5s;
+
+
+    .header-wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        .nav-listing {
+            display: flex;
+            align-items: center;
+
+            li {
+                a {
+                    color: $white;
+                    font-size: 16px;
+                    display: inline-block;
+                    text-transform: uppercase;
+                    transition: all 0.5s;
+
+                    &:not(.yellow-btn) {
+                        padding-right: 40px;
+                    }
+                }
+
+                &:last-child {
+                    padding-left: 25px;
+                }
+
+            }
+        }
+    }
+
+    .mat-toolbar {
+        &.mat-primary {
+            background-color: transparent;
+        }
+    }
+
+
+}
+
+.card-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+
+    .card-inner {
+        flex: 0 0 25%;
+        max-width: 25%;
+    }
+}
+
+.main-section {
+    .banner-section {
+        position: relative;
+        padding: 110px 0 50px;
+        min-height: 660px;
+
+        .banner-image {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+
+            img {
+                height: 100%;
+                width: 100%;
+                object-fit: cover;
+            }
+
+        }
+
+        .container {
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 55%;
+            transform: translateY(-55%);
+
+            .banner-content {
+                max-width: 780px;
+
+                .content-wrapper {
+                    display: flex;
+                    background-color: $white;
+                    border-radius: 8px;
+                    align-items: center;
+                    min-height: 56px;
+                    margin-bottom: 20px;
+                    overflow: hidden;
+
+                    label {
+                        position: absolute;
+                    }
+
+                    &.two-gride {
+                        .mat-mdc-form-field {
+                            flex: 0 0 50%;
+                            max-width: 50%;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .easy-steps-section {
+        padding: 80px 0;
+
+        .card-wrapper {
+            display: flex;
+            margin: 0 -20px;
+
+            .card-inner {
+                padding: 0 20px;
+            }
+
+            .mat-mdc-card {
+                text-align: center;
+                border: unset;
+                box-shadow: none;
+
+                .image-block {
+                    margin-bottom: 28px;
+                    min-height: 60px;
+                    min-width: 60px;
+                    display: inline-flex;
+                    justify-content: center;
+                    align-items: center;
+                }
+
+                span {
+                    display: block;
+                }
+
+                .mat-mdc-card-content {
+                    padding: unset;
+                    padding: unset;
+                    font-size: 16px;
+                    max-width: 220px;
+                    margin: 0 auto;
+                    line-height: 1.5;
+                }
+            }
+        }
+    }
+
+    .meet-our-doctors-section {
+        padding: 80px 0;
+        background-color: $bg-color;
+
+        .card-wrapper {
+            margin: 0 -30px;
+
+            .card-inner {
+                padding: 0 30px;
+
+                .mat-mdc-card {
+                    background-color: $white;
+                    padding: 30px 30px 10px 30px;
+                    border: 1px solid $border-color-1;
+                    border-radius: 8px;
+                    height: 100%;
+                    cursor: pointer;
+
+                    .image-block {
+                        margin-bottom: 15px;
+                        border-radius: 5px;
+                        overflow: hidden;
+                    }
+
+                    span {
+                        color: $secondary-color;
+                        font-size: 16px;
+                        margin-bottom: 10px;
+                        display: inline-block;
+                    }
+
+                    p {
+                        font-size: 14px;
+                        line-height: 1.4;
+                    }
+
+                    em {
+                        position: absolute;
+                        top: 31px;
+                        right: 0;
+                        background-color: #00D193;
+                        padding: 6px 8px;
+                        border-radius: 3px 0 0 3px;
+                        font-style: normal;
+
+                        img {
+                            display: inline-block;
+                            vertical-align: middle;
+                            margin-right: 6px;
+
+                        }
+
+                        span {
+                            margin: 0;
+                            color: rgb(255, 255, 255);
+                            font-size: 14px;
+                            vertical-align: middle;
+                        }
+                    }
+
+                    &:hover {
+                        box-shadow: $box-shadow;
+                    }
+                }
+            }
+        }
+    }
+
+    .top-searched-specialties-section {
+        padding: 80px 0;
+
+        .card-wrapper {
+            margin: 0 -15px;
+
+            .card-inner {
+                flex: 0 0 16.66%;
+                max-width: 16.66%;
+                padding: 0 15px;
+
+                .mat-mdc-card {
+                    border: 1px solid $border-color-2;
+                    padding: 20px 13px;
+                    text-align: center;
+                    height: 100%;
+                    box-shadow: unset;
+
+                    .image-block {
+                        margin-bottom: 20px;
+                    }
+
+                    span {
+                        color: $heading-color;
+                        font-size: 18px;
+                        font-weight: 500;
+                    }
+                }
+            }
+        }
+    }
+
+    .change-your-life-section {
+        .background-image {
+            background-image: url(../images/background-1.jpg);
+            background-repeat: no-repeat;
+            background-position: center;
+            overflow: hidden;
+            border-radius: 8px;
+
+            .heading {
+                padding: 73px 40px;
+                max-width: 1060px;
+                margin: 0 auto;
+
+                span {
+                    margin-right: 6px;
+                }
+
+                h2 {
+                    font-size: 48px;
+                    color: rgb(255, 255, 255);
+                    line-height: 1.2;
+                    padding-right: 20px;
+                    margin: 0;
+                    text-transform: capitalize;
+
+                    span {
+                        display: block;
+                    }
+                }
+            }
+        }
+    }
+
+    .video-content-section {
+        padding: 80px 0;
+
+        .mat-mdc-card {
+            border: 1px solid rgba(40, 37, 44, 0.08);
+            padding: 23px 20px 20px;
+            border-radius: 8px;
+            box-shadow: unset;
+
+            .profile-wrapper {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                margin-bottom: 22px;
+
+                .left-side {
+                    display: flex;
+                    padding-right: 20px;
+
+                    .image-block {
+                        border-radius: 50%;
+                        width: 40px;
+                        height: 40px;
+                        overflow: hidden;
+                        object-fit: cover;
+                        margin-right: 10px;
+
+                        img {
+                            width: 100%;
+                            height: 100%;
+                        }
+                    }
+
+                    .name-active-status {
+                        span {
+                            font-size: 16px;
+                            font-weight: 500;
+                            color: $heading-color;
+                        }
+
+                        p {
+                            font-size: 11px;
+                            color: $fonts-color-1;
+                            line-height: 1.4;
+                        }
+                    }
+                }
+            }
+
+            .video-content-wrapper {
+                position: relative;
+                padding-bottom: 43.5%;
+                overflow: hidden;
+                border-radius: 8px;
+                object-fit: cover;
+                margin-bottom: 20px;
+                .poster-image {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                }
+                span {
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+
+}

@@ -1,0 +1,293 @@
+
+
+.yellow-btn{
+    &.mat-mdc-raised-button:not(:disabled) {
+        background-color: $primary-color;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid $primary-color;
+        min-height: 48px;
+        border-radius: 8px;
+        padding: 0 30px;
+        font-weight: 500;
+        color: $white;
+        font-size: 16px;
+        text-transform: uppercase;
+    
+        .mdc-button__label {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+        }
+    
+        &:hover {
+            background-color: $secondary-color;
+            border: 1px solid $white;
+        }
+    }
+}
+.btn{
+    &.mat-mdc-outlined-button{
+        &:not(:disabled) {
+            border-color: $secondary-color;
+            padding: 0 18px;
+            color: $secondary-color;
+            text-transform: uppercase;
+            font-weight: 500;
+        }
+        .mat-mdc-button-touch-target{
+            height: 36px;
+        }
+    }
+    
+}
+
+
+.mat-mdc-form-field {
+
+    select {
+        width: 100%;
+    }
+
+    .mat-mdc-form-field-infix {
+        min-height: 22px;
+        padding: 0;
+
+        .mat-mdc-select {
+            .mat-mdc-select-arrow-wrapper {
+                .mat-mdc-select-arrow {
+                    background-image: url(/assets/images/arrow-down.svg);
+                    background-repeat: no-repeat;
+                    position: absolute;
+                    width: 20px;
+                    height: 13px;
+                    right: 16px;
+                    top: 5px;
+                    transition: $transition;
+
+
+                }
+
+                svg {
+                    display: none;
+                }
+            }
+
+            .mat-mdc-select-value {
+                padding: 0 40px 0 36px;
+
+            }
+        }
+
+    }
+
+    &:not(:last-child) {
+        .mat-mdc-select-value {
+            border-right: 2px solid $border-color;
+        }
+    }
+
+    &:first-child {
+        .mdc-text-field--filled {
+            padding: 0 8px 0 18px;
+        }
+    }
+
+    &.mat-focused {
+        .mat-mdc-select-arrow {
+            transform: rotate(180deg);
+        }
+    }
+
+    .mdc-text-field--filled {
+        padding: 0 8px;
+
+        &:not(.mdc-text-field--disabled) {
+            background-color: $white;
+
+            .mdc-line-ripple {
+                &::before {
+                    border: none;
+                }
+
+                &::after {
+                    border: none;
+                }
+            }
+
+            &:hover {
+                background-color: $white;
+            }
+
+        }
+
+        .mat-mdc-form-field-flex {
+            .mat-mdc-floating-label {
+                top: 50%;
+            }
+        }
+    }
+
+    .mat-mdc-form-field-subscript-wrapper {
+        display: none;
+    }
+}
+
+.two-grid {
+    .mat-mdc-form-field {
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+}
+
+.three-grid {
+    .mat-mdc-form-field {
+        flex: 0 0 33.33%;
+        max-width: 33.33%;
+    }
+}
+
+.cdk-overlay-pane {
+    &:not(.mat-mdc-select-panel-above) {
+
+        div.mat-mdc-select-panel {
+            border-radius: 8px !important;
+        }
+
+    }
+
+    &:not(.mat-mdc-autocomplete-panel-above) {
+        div.mat-mdc-autocomplete-panel {
+            border-radius: 8px !important;
+        }
+    }
+
+    .mat-mdc-select-panel {
+        padding: 15px 0;
+        
+
+        .mat-mdc-option {
+            transition: $transition;
+
+            &:hover {
+                background-color: $primary-color;
+
+                .mdc-list-item__primary-text {
+                    color: white;
+                }
+            }
+            .mdc-list-item__primary-text {
+                color: $fonts-color;
+            }
+           
+            &.mdc-list-item--selected {
+                &:not(.mdc-list-item--disabled) {
+                    .mdc-list-item__primary-text {
+                        color: $primary-color;
+                    }
+
+                    &:not(.mat-mdc-option-multiple) {
+                        background-color: $white;
+                    }
+
+                    &:hover {
+                        background-color: $primary-color;
+
+                        .mdc-list-item__primary-text {
+                            color: $white;
+                        }
+                    }
+                }
+            }
+
+            &.mat-mdc-option-active {
+                &.mdc-list-item {
+                    background-color: $white;
+                }
+
+                &:hover {
+                    background-color: $primary-color;
+                    color: $white;
+                }
+            }
+
+            .mat-pseudo-checkbox-minimal {
+                display: none;
+            }
+        }
+    }
+
+    .mat-mdc-autocomplete-panel {
+        padding: 10px 0;
+
+        .mat-mdc-optgroup {
+            .mat-mdc-option {
+                transition: $transition;
+
+                &:not(.mat-mdc-option-multiple) {
+                    &:hover {
+                        background-color: $primary-color;
+                        color: $white;
+                        &.mdc-list-item--selected {
+                            &:not(.mdc-list-item--disabled) {
+                                .mdc-list-item__primary-text {
+                                  color: $white;
+                                }
+                            }
+                        }
+                    }
+
+                }
+
+                &.mdc-list-item--selected {
+                    &:not(.mdc-list-item--disabled) {
+                        .mdc-list-item__primary-text {
+                            color: $primary-color;
+                        }
+                    }
+                }
+                .mat-pseudo-checkbox {
+                    display: none;
+                }
+            }
+
+        }
+    }
+}
+
+
+
+
+.mat-mdc-form-field:first-child {
+    .mdc-text-field--no-label {
+        &:not(.mdc-text-field--textarea) {
+            .mat-mdc-form-field-input-control {
+                &.mdc-text-field__input {
+                    padding: 0 0 0 31px;
+                    border-right: 2px solid $border-color;
+                }
+            }
+        }
+    }
+}
+
+:not(.mdc-text-field--textarea) .mat-mdc-form-field-input-control.mdc-text-field__input,
+.mat-mdc-text-field-wrapper .mat-mdc-form-field-input-control {
+    height: auto;
+}
+
+.mat-mdc-icon-button {
+    svg {
+        fill: $primary-color;
+    }
+}
+.mat-datepicker-content{
+    .mat-calendar{
+        .mat-calendar-body-cell-content{
+            color: $fonts-color;
+        }
+    }
+} 
+
