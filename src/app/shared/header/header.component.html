@@ -9,14 +9,14 @@
                 </a>
 
                 <ul class="nav-listing">
-                    <li><a href="#" title="About Us" mat-button>About Us</a></li>
-                    <li><a href="#" title="Contact Us" mat-button>Contact Us</a></li>
+                    <li><a href="#" title="About Us" mat-button disableRipple>About Us</a></li>
+                    <li><a href="#" title="Contact Us" mat-button disableRipple>Contact Us</a></li>
                     <li><a href="#" title="Medical Professionals" mat-raised-button class="spaced-button yellow-btn">MEDICAL
                             PROFESSIONALS</a>
                     </li>
-                    <li><a href="#" title="Patient" mat-raised-button class="yellow-btn" >PATIENT</a></li>
+                    <li><a href="#" title="Patient" mat-raised-button class="yellow-btn " >PATIENT</a></li>
                 </ul>
-                <div class="hamburger-icon">
+                <div class="hamburger-icon" (click)="toggleClass()">
                     <span></span>
                     <span></span>
                     <span></span>

@@ -24,6 +24,10 @@ export class HeaderComponent {
       header?.classList.remove('sticky-header');
     }
   }
+  toggleClass(){
+    document.querySelector("body")?.classList.toggle("open-menu");
+    document.querySelector("html")?.classList.toggle("open-menu");
+  }
   ngOnInit() {
     window.addEventListener('scroll',this.checkScroll);
     }   

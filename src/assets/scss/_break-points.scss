@@ -5,6 +5,7 @@
     $xs-max: "(max-width: 575px)";
     $sm-max: "(max-width: 767px)";
     $sm-min: "(min-width: 768px)";
+    $sms-max:"(max-width: 867px)";
     $smd-max: "(max-width: 991px)";
     $smd-min: "(min-width: 992px)";
     $md-max: "(max-width: 1023px)";
@@ -34,6 +35,11 @@
     }
     @else if $point==sm-max {
         @media #{$sm-max} {
+            @content;
+        }
+    }
+    @else if $point==sms-max {
+        @media #{$sms-max} {
             @content;
         }
     }

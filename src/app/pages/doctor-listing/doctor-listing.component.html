@@ -1,0 +1,325 @@
+<div class="doctor-listing-section">
+  <div class="container">
+    <div class="doctor-listing-wrapper">
+      <div class="more-filter-block">
+        <div class="title-block">
+          <h2>More Filter</h2>
+          <div class="btn-wrapper">
+            <button mat-button class="black-btn sm-btn">CLEAR ALL</button>
+          </div>
+        </div>
+        <div class="distance-language-listing">
+          <mat-accordion multi>
+            <mat-expansion-panel>
+              <mat-expansion-panel-header>Distance</mat-expansion-panel-header>
+              <mat-panel-description>
+                <mat-checkbox disableRipple>0.5 Mile (10)</mat-checkbox>
+                <mat-checkbox disableRipple>5 Miles (12)</mat-checkbox>
+                <mat-checkbox disableRipple>10 Mile (1)</mat-checkbox>
+                <mat-checkbox disableRipple>10 Mile (1)</mat-checkbox>
+                <mat-checkbox disableRipple>30 Mile (0)</mat-checkbox>
+              </mat-panel-description>
+            </mat-expansion-panel>
+            <mat-expansion-panel>
+              <mat-expansion-panel-header>Language</mat-expansion-panel-header>
+              <mat-panel-description>
+                <mat-checkbox disableRipple>English (10)</mat-checkbox>
+                <mat-checkbox disableRipple>Arabic (12)</mat-checkbox>
+                <mat-checkbox disableRipple>Chinese (1)</mat-checkbox>
+                <mat-checkbox disableRipple>Russian (0)</mat-checkbox>
+                <mat-checkbox disableRipple>Spanish (0)</mat-checkbox>
+              </mat-panel-description>
+            </mat-expansion-panel>
+          </mat-accordion>
+        </div>
+      </div>
+      <div class="consultants-block">
+        <h2>10 Consultants</h2>
+
+        <div class="tabing-sorting-wrapper">
+          <div class="sorting-wrapper">
+            <mat-form-field>
+              <label for="">Sort By:</label>
+              <mat-select [(value)]="selectedValue">
+                <mat-option value="option1"> High to Low rating</mat-option>
+                <mat-option value="option2"> Low to High rating</mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+          <div class="tabing-wrapper">
+            <mat-tab-group>
+              <mat-tab label="All Appointments">
+                <div class="doctor-card-listing">
+                  <div class="card">
+                    <div class="card-inner">
+                      <div class="doctor-info-block">
+                        <div class="image-block">
+                          <img
+                            src="../../../assets/images/doctor3.jpg"
+                            alt="doctor3"
+                          />
+                        </div>
+                        <div class="info-block">
+                          <div class="title-time-wrapper">
+                            <div class="title-block">
+                              <h3>Dr. Deniz Warren (MD)</h3>
+                              <button mat-button class="purple-btn btn sm-btn">
+                                <em
+                                  ><img
+                                    src="../../../assets/images/video.svg"
+                                    alt=""
+                                  /><span>Video Consultant</span></em
+                                >
+                              </button>
+                              <button
+                                mat-button
+                                class="light-pink-btn btn sm-btn"
+                              >
+                                <em
+                                  ><img
+                                    src="../../../assets/images/persons.svg"
+                                    alt=""
+                                  /><span>In-Person</span></em
+                                >
+                              </button>
+                            </div>
+                            <div class="time-block">
+                              <em
+                                ><img
+                                  src="../../../assets/images/clock.svg"
+                                  alt="clock"
+                                />
+                                <span>9:00 AM - 5:00 PM</span>
+                              </em>
+                            </div>
+                          </div>
+                          <ul class="specialist-block">
+                            <li>Cardiologist</li>
+                            <li>0.2 Mi</li>
+                          </ul>
+
+                          <ul class="review-block">
+                            <li class="green-chip">
+                              <em
+                                ><img
+                                  src="../../../assets/images/star.svg"
+                                  alt="star"
+                                />
+                                <span>4.6</span></em
+                              >
+                            </li>
+                            <li class="count-review">204 reviews</li>
+                          </ul>
+                          <address>
+                            Heart Plus Hospital, 73-09 Myrtle Avenue, 1st Floor,
+                            Glendale, NY 11385
+                          </address>
+                        </div>
+                      </div>
+                      <div class="checkbox-link-block">
+                        <mat-checkbox>ADD TO Compare</mat-checkbox>
+                        <a class="pink-link" href="doctor_details">
+                          VIEW DETAILS
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="card">
+                    <div class="card-inner">
+                      <div class="doctor-info-block">
+                        <div class="image-block">
+                          <img
+                            src="../../../assets/images/doctor1.jpg"
+                            alt="doctor3"
+                          />
+                        </div>
+                        <div class="info-block">
+                          <div class="title-time-wrapper">
+                            <div class="title-block">
+                              <h3>Dr. Smeeth Chessy (MS)</h3>
+                              <button mat-button class="purple-btn sm-btn btn">
+                                <em
+                                  ><img
+                                    src="../../../assets/images/video.svg"
+                                    alt=""
+                                  /><span>Video Consultant</span></em
+                                >
+                              </button>
+                              <button
+                                mat-button
+                                class="light-pink-btn btn sm-btn"
+                              >
+                                <em
+                                  ><img
+                                    src="../../../assets/images/persons.svg"
+                                    alt=""
+                                  /><span>In-Person</span></em
+                                >
+                              </button>
+                            </div>
+                            <div class="time-block">
+                              <em
+                                ><img
+                                  src="../../../assets/images/clock.svg"
+                                  alt="clock"
+                                />
+                                <span>9:00 AM - 5:00 PM</span>
+                              </em>
+                            </div>
+                          </div>
+                          <ul class="specialist-block">
+                            <li>Cardiologist</li>
+                            <li>0.2 Mi</li>
+                          </ul>
+
+                          <ul class="review-block">
+                            <li class="green-chip">
+                              <em
+                                ><img
+                                  src="../../../assets/images/star.svg"
+                                  alt="star"
+                                />
+                                <span>4.6</span></em
+                              >
+                            </li>
+                            <li class="count-review">204 reviews</li>
+                          </ul>
+                          <address>104 Delancey St, New York, NY 10002</address>
+                        </div>
+                      </div>
+                      <div class="checkbox-link-block">
+                        <mat-checkbox>ADD TO Compare</mat-checkbox>
+                        <a
+                          class="pink-link"
+                          [routerLink]="['../doctor_details']"
+                        >
+                          VIEW DETAILS
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="card">
+                    <div class="card-inner">
+                      <div class="doctor-info-block">
+                        <div class="image-block">
+                          <img
+                            src="../../../assets/images/doctor2.jpg"
+                            alt="doctor3"
+                          />
+                        </div>
+                        <div class="info-block">
+                          <div class="title-time-wrapper">
+                            <div class="title-block">
+                              <h3>Dr. Wooyoung Choi</h3>
+                              <button mat-button class="purple-btn sm-btn btn">
+                                <em
+                                  ><img
+                                    src="../../../assets/images/video.svg"
+                                    alt=""
+                                  /><span>Video Consultant</span></em
+                                >
+                              </button>
+                            </div>
+                            <div class="time-block">
+                              <em
+                                ><img
+                                  src="../../../assets/images/clock.svg"
+                                  alt="clock"
+                                />
+                                <span>9:00 AM - 5:00 PM</span>
+                              </em>
+                            </div>
+                          </div>
+                          <ul class="specialist-block">
+                            <li>Cardiologist</li>
+                            <li>0.2 Mi</li>
+                          </ul>
+
+                          <ul class="review-block">
+                            <li class="green-chip">
+                              <em
+                                ><img
+                                  src="../../../assets/images/star.svg"
+                                  alt="star"
+                                />
+                                <span>4.6</span></em
+                              >
+                            </li>
+                            <li class="count-review">204 reviews</li>
+                          </ul>
+                          <address>
+                            23 W 45th Street, 2nd Floor, New York, NY 10036
+                          </address>
+                        </div>
+                      </div>
+                      <div class="checkbox-link-block">
+                        <mat-checkbox>ADD TO Compare</mat-checkbox>
+                        <a
+                          class="pink-link"
+                          [routerLink]="['../doctor_details']"
+                        >
+                          VIEW DETAILS
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </mat-tab>
+              <mat-tab label="In-Person"></mat-tab>
+              <mat-tab label="Video C onsultant"></mat-tab>
+            </mat-tab-group>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="compare-doctor-section">
+  <div class="container">
+    <div class="title-block">
+      <h2>Compare Doctors</h2>
+      <p>Select Minimum 3 doctors</p>
+    </div>
+    <ul class="doctor-chip-wrapper">
+      <li class="doctor-chip">
+        <div class="doctor-chip-inner">
+          <div class="img-block">
+            <img src="../../../assets/images/doctor3.jpg" alt="" />
+          </div>
+          <div class="doctor-info-block">
+            <h3>Dr. Deniz Warren (MD)</h3>
+            <span>Cardiologist</span>
+          </div>
+        </div>
+        <span class="close-btn"
+          ><img src="../../../assets/images/close-icon.svg" alt="close-icon"
+        /></span>
+      </li>
+      <li class="doctor-chip">
+        <div class="doctor-chip-inner">
+          <div class="img-block">
+            <img src="../../../assets/images/doctor1.jpg" alt="" />
+          </div>
+          <div class="doctor-info-block">
+            <h3>Dr. Deniz Warren (MD)</h3>
+            <span>Cardiologist</span>
+          </div>
+        </div>
+        <span class="close-btn"
+          ><img src="../../../assets/images/close-icon.svg" alt="close-icon"
+        /></span>
+      </li>
+      <li class="doctor-chip select-chip">
+        <div class="doctor-chip-inner">
+          <span>Select Doctor 3</span>
+        </div>
+      </li>
+      <li class="btn-block">
+        <button mat-stroked-button class="pink-outline-btn lg-btn">
+          Compare
+        </button>
+      </li>
+    </ul>
+  </div>
+</div>
