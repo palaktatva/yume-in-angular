@@ -10,26 +10,34 @@
         </div>
         <div class="distance-language-listing">
           <mat-accordion multi>
-            <mat-expansion-panel>
-              <mat-expansion-panel-header>Distance</mat-expansion-panel-header>
-              <mat-panel-description>
-                <mat-checkbox disableRipple>0.5 Mile (10)</mat-checkbox>
-                <mat-checkbox disableRipple>5 Miles (12)</mat-checkbox>
-                <mat-checkbox disableRipple>10 Mile (1)</mat-checkbox>
-                <mat-checkbox disableRipple>10 Mile (1)</mat-checkbox>
-                <mat-checkbox disableRipple>30 Mile (0)</mat-checkbox>
-              </mat-panel-description>
-            </mat-expansion-panel>
-            <mat-expansion-panel>
-              <mat-expansion-panel-header>Language</mat-expansion-panel-header>
-              <mat-panel-description>
-                <mat-checkbox disableRipple>English (10)</mat-checkbox>
-                <mat-checkbox disableRipple>Arabic (12)</mat-checkbox>
-                <mat-checkbox disableRipple>Chinese (1)</mat-checkbox>
-                <mat-checkbox disableRipple>Russian (0)</mat-checkbox>
-                <mat-checkbox disableRipple>Spanish (0)</mat-checkbox>
-              </mat-panel-description>
-            </mat-expansion-panel>
+            <div class="expansion-panel">
+              <mat-expansion-panel>
+                <mat-expansion-panel-header
+                  >Distance</mat-expansion-panel-header
+                >
+                <mat-panel-description>
+                  <mat-checkbox disableRipple>0.5 Mile (10)</mat-checkbox>
+                  <mat-checkbox disableRipple>5 Miles (12)</mat-checkbox>
+                  <mat-checkbox disableRipple>10 Mile (1)</mat-checkbox>
+                  <mat-checkbox disableRipple>10 Mile (1)</mat-checkbox>
+                  <mat-checkbox disableRipple>30 Mile (0)</mat-checkbox>
+                </mat-panel-description>
+              </mat-expansion-panel>
+            </div>
+            <div class="expansion-panel">
+              <mat-expansion-panel>
+                <mat-expansion-panel-header
+                  >Language</mat-expansion-panel-header
+                >
+                <mat-panel-description>
+                  <mat-checkbox disableRipple>English (10)</mat-checkbox>
+                  <mat-checkbox disableRipple>Arabic (12)</mat-checkbox>
+                  <mat-checkbox disableRipple>Chinese (1)</mat-checkbox>
+                  <mat-checkbox disableRipple>Russian (0)</mat-checkbox>
+                  <mat-checkbox disableRipple>Spanish (0)</mat-checkbox>
+                </mat-panel-description>
+              </mat-expansion-panel>
+            </div>
           </mat-accordion>
         </div>
       </div>
@@ -40,7 +48,7 @@
           <div class="sorting-wrapper">
             <mat-form-field>
               <label for="">Sort By:</label>
-              <mat-select [(value)]="selectedValue">
+              <mat-select [(value)]="selectedValue" panelClass="pink-effect">
                 <mat-option value="option1"> High to Low rating</mat-option>
                 <mat-option value="option2"> Low to High rating</mat-option>
               </mat-select>
@@ -63,25 +71,30 @@
                           <div class="title-time-wrapper">
                             <div class="title-block">
                               <h3>Dr. Deniz Warren (MD)</h3>
-                              <button mat-button class="purple-btn btn sm-btn">
-                                <em
-                                  ><img
-                                    src="../../../assets/images/video.svg"
-                                    alt=""
-                                  /><span>Video Consultant</span></em
+                              <div class="button-wrapper">
+                                <button
+                                  mat-button
+                                  class="purple-btn btn sm-btn"
                                 >
-                              </button>
-                              <button
-                                mat-button
-                                class="light-pink-btn btn sm-btn"
-                              >
-                                <em
-                                  ><img
-                                    src="../../../assets/images/persons.svg"
-                                    alt=""
-                                  /><span>In-Person</span></em
+                                  <em
+                                    ><img
+                                      src="../../../assets/images/video.svg"
+                                      alt=""
+                                    /><span>Video Consultant</span></em
+                                  >
+                                </button>
+                                <button
+                                  mat-button
+                                  class="light-pink-btn btn sm-btn"
                                 >
-                              </button>
+                                  <em
+                                    ><img
+                                      src="../../../assets/images/persons.svg"
+                                      alt=""
+                                    /><span>In-Person</span></em
+                                  >
+                                </button>
+                              </div>
                             </div>
                             <div class="time-block">
                               <em
@@ -118,7 +131,7 @@
                       </div>
                       <div class="checkbox-link-block">
                         <mat-checkbox>ADD TO Compare</mat-checkbox>
-                        <a class="pink-link" href="doctor_details">
+                        <a class="pink-link" href="doctor-details">
                           VIEW DETAILS
                         </a>
                       </div>
@@ -137,25 +150,30 @@
                           <div class="title-time-wrapper">
                             <div class="title-block">
                               <h3>Dr. Smeeth Chessy (MS)</h3>
-                              <button mat-button class="purple-btn sm-btn btn">
-                                <em
-                                  ><img
-                                    src="../../../assets/images/video.svg"
-                                    alt=""
-                                  /><span>Video Consultant</span></em
+                              <div class="button-wrapper">
+                                <button
+                                  mat-button
+                                  class="purple-btn sm-btn btn"
                                 >
-                              </button>
-                              <button
-                                mat-button
-                                class="light-pink-btn btn sm-btn"
-                              >
-                                <em
-                                  ><img
-                                    src="../../../assets/images/persons.svg"
-                                    alt=""
-                                  /><span>In-Person</span></em
+                                  <em
+                                    ><img
+                                      src="../../../assets/images/video.svg"
+                                      alt=""
+                                    /><span>Video Consultant</span></em
+                                  >
+                                </button>
+                                <button
+                                  mat-button
+                                  class="light-pink-btn btn sm-btn"
                                 >
-                              </button>
+                                  <em
+                                    ><img
+                                      src="../../../assets/images/persons.svg"
+                                      alt=""
+                                    /><span>In-Person</span></em
+                                  >
+                                </button>
+                              </div>
                             </div>
                             <div class="time-block">
                               <em
@@ -191,7 +209,7 @@
                         <mat-checkbox>ADD TO Compare</mat-checkbox>
                         <a
                           class="pink-link"
-                          [routerLink]="['../doctor_details']"
+                          [routerLink]="['../doctor-details']"
                         >
                           VIEW DETAILS
                         </a>
@@ -211,14 +229,19 @@
                           <div class="title-time-wrapper">
                             <div class="title-block">
                               <h3>Dr. Wooyoung Choi</h3>
-                              <button mat-button class="purple-btn sm-btn btn">
-                                <em
-                                  ><img
-                                    src="../../../assets/images/video.svg"
-                                    alt=""
-                                  /><span>Video Consultant</span></em
+                              <div class="button-wrapper">
+                                <button
+                                  mat-button
+                                  class="purple-btn sm-btn btn"
                                 >
-                              </button>
+                                  <em
+                                    ><img
+                                      src="../../../assets/images/video.svg"
+                                      alt=""
+                                    /><span>Video Consultant</span></em
+                                  >
+                                </button>
+                              </div>
                             </div>
                             <div class="time-block">
                               <em
@@ -256,7 +279,7 @@
                         <mat-checkbox>ADD TO Compare</mat-checkbox>
                         <a
                           class="pink-link"
-                          [routerLink]="['../doctor_details']"
+                          [routerLink]="['../doctor-details']"
                         >
                           VIEW DETAILS
                         </a>

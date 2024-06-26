@@ -90,8 +90,9 @@
         top: 0;
         transition: all 0.5s;
         width: 350px;
-        background-color: rgb(255, 255, 255);
+        background-color: $white;
         padding-top: 80px;
+        box-shadow: 0 3px 6px $box-shadow-color;
         display: block;
         bottom: 0;
       }
@@ -108,7 +109,10 @@
           text-transform: uppercase;
           transition: all 0.5s;
           font-weight: 400;
-
+          font-family: $primary-fonts;
+          &:not(.yellow-btn) {
+            padding-right: 40px;
+          }
           &:hover {
             color: $primary-color;
           }
@@ -127,7 +131,7 @@
         }
 
         &:last-child {
-          padding-left: 25px;
+          padding-left: 20px;
         }
 
         @include bp(lg-max) {
@@ -229,6 +233,9 @@
             min-height: 56px;
             align-items: center;
             padding: 0 10px;
+            @include bp(sm-max) {
+              padding: 0;
+            }
           }
         }
       }
@@ -534,6 +541,7 @@
 
         .left-side {
           display: flex;
+          align-items: center;
           padding-right: 20px;
 
           .image-block {
@@ -616,19 +624,6 @@
           &.visible {
             height: auto;
             display: inline-block;
-          }
-        }
-
-        .read-more-less {
-          display: block;
-          margin-top: 10px;
-          color: $primary-color;
-          font-size: 16px;
-          cursor: pointer;
-          transition: $transition;
-
-          &:hover {
-            color: $secondary-color;
           }
         }
       }
@@ -832,18 +827,32 @@
   }
   .doctor-listing-wrapper {
     display: flex;
+    flex-wrap: wrap;
     margin: 0 -15px;
+    @include bp(lg-max) {
+      margin: 0;
+    }
 
     .more-filter-block {
       flex: 0 0 29.5%;
       max-width: 29.5%;
       padding: 0 15px;
 
+      @include bp(lg-max) {
+        flex: 0 0 100%;
+        max-width: 100%;
+        padding: 0;
+      }
+
       .title-block {
         display: flex;
         justify-content: space-between;
         align-items: center;
         margin-bottom: 18px;
+
+        @include bp(sm-max) {
+          margin-bottom: 15px;
+        }
       }
 
       .distance-language-listing {
@@ -861,8 +870,17 @@
       flex: 0 0 70.5%;
       max-width: 70.5%;
       padding: 0 15px;
+
+      @include bp(lg-max) {
+        flex: 0 0 100%;
+        max-width: 100%;
+        padding: 0;
+      }
       h2 {
         margin-bottom: 21px;
+        @include bp(sm-max) {
+          margin-bottom: 15px;
+        }
       }
       .tabing-sorting-wrapper {
         position: relative;
@@ -873,6 +891,11 @@
           top: -10px;
           z-index: 1000;
           height: 48px;
+
+          @include bp(sm-max) {
+            position: relative;
+            max-width: 100%;
+          }
         }
         .doctor-card-listing {
           margin-bottom: -18px;
@@ -890,37 +913,78 @@
     border-radius: 8px;
     .doctor-info-block {
       display: flex;
+      flex-wrap: wrap;
       padding: 19px 0 19px;
       margin: 0 -10px;
       align-items: center;
+      @include bp(xs-max) {
+        margin: 0;
+      }
       .image-block {
         flex: 0 0 140px;
         max-width: 140px;
         padding: 0 10px;
+        @include bp(xs-max) {
+          flex: 0 0 100%;
+          max-width: 100%;
+          padding: 0;
+          margin-bottom: 9px;
+        }
       }
       .info-block {
         flex: 0 0 calc(100% - 140px);
         max-width: calc(100% - 140px);
         padding: 0 10px;
+        @include bp(xs-max) {
+          flex: 0 0 100%;
+          max-width: 100%;
+          padding: 0;
+        }
         .title-time-wrapper {
           display: flex;
           justify-content: space-between;
           margin-bottom: 8px;
 
+          @include bp(sms-max) {
+            flex-direction: column;
+          }
+
           .title-block {
             display: flex;
             align-items: center;
-
+            @include bp(sms-max) {
+              flex-direction: column;
+              align-items: flex-start;
+            }
             h3 {
               font-size: 18px;
               font-weight: 400;
               margin-bottom: 0;
               margin-right: 11px;
               text-transform: capitalize;
+
+              @include bp(sms-max) {
+                margin-bottom: 9px;
+              }
             }
-            button {
-              &:last-child {
-                margin-left: 8px;
+            .button-wrapper {
+              @include bp(sms-max) {
+                margin-bottom: 9px;
+              }
+              button {
+                &:not(:last-child) {
+                  margin-right: 8px;
+                }
+              }
+              .light-pink-btn {
+                @include bp(xxxs-max) {
+                  display: block;
+                }
+              }
+              .purple-btn {
+                @include bp(xxxs-max) {
+                  margin-bottom: 9px;
+                }
               }
             }
           }
@@ -945,6 +1009,9 @@
             padding: 0 9px;
             &:first-child {
               font-size: 16px;
+              @include bp(xs-max) {
+                font-size: 14px;
+              }
             }
             &:last-child {
               color: $black;
@@ -992,6 +1059,15 @@
       justify-content: space-between;
       padding: 20px 0;
       border-top: 1px solid $border-color-1;
+
+      @include bp(xxs-max) {
+        flex-direction: column;
+      }
+      .mat-accent {
+        @include bp(xxs-max) {
+          margin-bottom: 9px;
+        }
+      }
     }
   }
 }
@@ -1020,13 +1096,30 @@
   }
   .doctor-chip-wrapper {
     display: flex;
+    flex-wrap: wrap;
     margin: 0 -10px;
-
+    @include bp(smd-max) {
+      margin: 0 -10px -10px;
+    }
+    @include bp(xs-max) {
+      margin: 0 0 -10px;
+    }
     li {
       padding: 0 10px;
       &.doctor-chip {
         flex: 0 0 28.36%;
         max-width: 28.36%;
+
+        @include bp(smd-max) {
+          flex: 0 0 50%;
+          max-width: 50%;
+          padding-bottom: 10px;
+        }
+        @include bp(xs-max) {
+          flex: 0 0 100%;
+          max-width: 100%;
+          padding: 0 0 10px;
+        }
         position: relative;
         .doctor-chip-inner {
           padding: 10px 14px;
@@ -1035,15 +1128,20 @@
           border-radius: 6px;
           height: 100%;
           .img-block {
-            width: 32px;
-            height: 32px;
+            flex: 0 0 32px;
+            max-width: 32px;
             margin-right: 15px;
 
             img {
               object-fit: cover;
+              width: 100%;
+              height: 100%;
+              border-radius: 4px;
             }
           }
           .doctor-info-block {
+            flex: 0 0 calc(100% - 47px);
+            max-width: calc(100% - 47px);
             h3 {
               font-size: 14px;
               margin-bottom: 0;
@@ -1085,10 +1183,24 @@
       &.btn-block {
         flex: 0 0 14.9%;
         max-width: 14.9%;
+        @include bp(smd-max) {
+          flex: 0 0 50%;
+          max-width: 50%;
+          padding-bottom: 10px;
+        }
+        @include bp(xs-max) {
+          flex: 0 0 100%;
+          max-width: 100%;
+          padding: 0 0 15px;
+        }
         width: 100%;
         button {
           width: 100%;
           height: 100%;
+
+          @include bp(xs-max) {
+            height: 48px;
+          }
         }
       }
     }
@@ -1098,19 +1210,39 @@
 .doctor-details-section {
   padding: 180px 0 50px;
 
+  @include bp(lg-max) {
+    padding: 160px 0 40px;
+  }
+  @include bp(sm-max) {
+    padding: 150px 0 30px;
+  }
+  .container {
+    max-width: 1200px;
+  }
   .doctor-details-appointment-wrapper {
     display: flex;
+    flex-wrap: wrap;
     margin: 0 -15px;
+    @include bp(lg-max) {
+      margin: 0;
+    }
 
     .doctor-detail-block {
-      flex: 0 0 65%;
-      max-width: 65%;
+      flex: 0 0 62%;
+      max-width: 62%;
       padding: 0 15px;
 
+      @include bp(lg-max) {
+        flex: 0 0 100%;
+        max-width: 100%;
+        padding: 0;
+      }
+
       .card {
-        padding-bottom: 40px;
+        padding-bottom: 10px;
         .card-inner {
           border: none;
+          padding: 0;
         }
         address {
           margin-bottom: 8px;
@@ -1118,6 +1250,12 @@
         .image-block {
           flex: 0 0 170px;
           max-width: 170px;
+
+          @include bp(xs-max) {
+            flex: 0 0 100%;
+            max-width: 100%;
+            padding: 0;
+          }
 
           img {
             width: 150px;
@@ -1127,6 +1265,13 @@
         .info-block {
           flex: 0 0 calc(100% - 170px);
           max-width: calc(100% - 170px);
+
+          @include bp(xs-max) {
+            flex: 0 0 100%;
+            max-width: 100%;
+            padding: 0;
+          }
+
           .title-time-wrapper {
             .title-block {
               h2 {
@@ -1134,46 +1279,77 @@
                 font-weight: 500;
                 text-transform: capitalize;
                 margin-right: 11px;
+                @include bp(lgl-max) {
+                  font-size: 22px;
+                }
+
+                @include bp(smd-max) {
+                  font-size: 20px;
+                }
+                @include bp(sms-max) {
+                  margin-bottom: 9px;
+                }
+              }
+            }
+          }
+        }
+      }
+      .nav-heading {
+        margin-bottom: 30px;
+        height: 60px;
+        border-bottom: 1px solid $border-color-2;
+        background-color: $white;
+        overflow: hidden;
+        position: sticky;
+        top: 94px;
+        z-index: 100;
+
+        @include bp(sm-max) {
+          margin-bottom: 20px;
+          top: 86px;
+        }
+        .nav-listing-wrapper {
+          overflow-x: auto;
+          padding-bottom: 10px;
+          .nav-listing {
+            display: flex;
+            margin-left: -10px;
+            padding-top: 16px;
+
+            li {
+              padding: 0 10px 21px;
+              white-space: nowrap;
+
+              a {
+                font-size: 16px;
+                color: $heading-color;
+                padding-bottom: 20px;
+                @include bp(xs-max) {
+                  font-size: 14px;
+                }
+                &.active {
+                  font-weight: 500;
+                  border-bottom: 3px solid $pink_color;
+                  color: $pink_color;
+                }
               }
             }
           }
         }
       }
 
-      .nav-listing {
-        display: flex;
-        margin: 0 -10px;
-        border-bottom: 1px solid $border-color-2;
-        background-color: $white;
-        position: sticky;
-        top: 94px;
-        z-index: 20;
-        padding-top: 16px;
-
-        li {
-          padding: 0 10px 14px;
-
-          a {
-            font-size: 16px;
-            color: $heading-color;
-            padding-bottom: 14px;
-
-            &.active {
-              font-weight: 500;
-              border-bottom: 3px solid $pink_color;
-              color: $pink_color;
-            }
-          }
-        }
-      }
       .block-wrapper {
         .title-block {
           display: flex;
           justify-content: space-between;
-          margin-bottom: 10px;
+          margin-bottom: 5px;
           h3 {
             font-size: 20px;
             font-weight: 500;
+            text-transform: capitalize;
+            @include bp(smd-max) {
+              font-size: 18px;
+            }
           }
           .swiper-navigation {
             display: flex;
@@ -1184,13 +1360,30 @@
           }
         }
         .overview-block {
-          padding: 30px 0 40px;
+          padding: 0 0 40px;
+
+          @include bp(sm-max) {
+            padding: 0 0 30px;
+          }
           .description {
             margin-bottom: 20px;
             p {
               color: $heading-color;
               font-size: 16px;
               line-height: 1.625;
+              height: 80px;
+              overflow: hidden;
+              display: -webkit-box;
+              -webkit-line-clamp: 3;
+              -webkit-box-orient: vertical;
+              @include bp(xs-max) {
+                font-size: 14px;
+                height: 70px;
+              }
+              &.visible {
+                height: auto;
+                display: inline-block;
+              }
             }
           }
 
@@ -1202,18 +1395,29 @@
                 margin-right: 15px;
                 filter: invert(8%) sepia(0%) saturate(0%) hue-rotate(0deg)
                   brightness(97%) contrast(95%);
+
+                @include bp(sm-max) {
+                  margin-right: 10px;
+                }
               }
               span {
                 vertical-align: middle;
                 color: $grey1;
+                font-size: 14px;
+                font-weight: 400;
               }
             }
             ul {
               li {
-                line-height: 2.3;
+                line-height: 1.3;
                 position: relative;
-                padding-left: 22px;
-
+                padding: 0 0 16px 29px;
+                font-size: 16px;
+                color: $heading-color;
+                @include bp(xs-max) {
+                  font-size: 14px;
+                  padding: 0 0 15px 20px;
+                }
                 &::before {
                   content: "";
                   position: absolute;
@@ -1222,8 +1426,8 @@
                   width: 6px;
                   height: 6px;
                   background-size: contain;
-                  top: 12px;
-                  left: 0;
+                  top: 9px;
+                  left: 3px;
                 }
               }
             }
@@ -1244,6 +1448,7 @@
             p {
               font-size: 14px;
               color: $heading-color;
+              line-height: 1.4;
             }
           }
           .image-block {
@@ -1254,13 +1459,26 @@
         }
         .review-block {
           padding: 40px 0;
+          @include bp(sm-max) {
+            padding: 30px 0;
+          }
           .review-score-bar {
             display: flex;
             margin: 0 -15px 22px;
+            flex-wrap: wrap;
+
+            @include bp(xxs-max) {
+              margin: 0 0 22px;
+            }
             .reviews-score {
               padding: 0 15px;
               flex: 0 0 155px;
               max-width: 155px;
+              @include bp(xxs-max) {
+                flex: 0 0 100%;
+                max-width: 100%;
+                padding: 0 0 20px;
+              }
               .review-inner {
                 padding: 30px;
                 background-color: $bg-color-2;
@@ -1271,7 +1489,8 @@
                   font-size: 30px;
                   font-weight: 700;
                   color: $success-color;
-                  margin-bottom: 5px;
+                  display: inline-block;
+                  margin-bottom: 8px;
                 }
                 p {
                   color: $heading-color;
@@ -1281,8 +1500,15 @@
             .review-bar {
               flex: 0 0 calc(100% - 155px);
               max-width: calc(100% - 155px);
+              padding: 0 15px;
+              @include bp(xxs-max) {
+                flex: 0 0 100%;
+                max-width: 100%;
+                padding: 0;
+              }
               .review-bar-listing {
                 margin-bottom: -10px;
+
                 li {
                   padding-bottom: 10px;
                   .label {
@@ -1291,6 +1517,11 @@
                     min-width: 57px;
                     display: inline-block;
                     margin-right: 15px;
+                    text-align: right;
+
+                    @include bp(xxs-max) {
+                      margin-right: 10px;
+                    }
                   }
                   .progress-bar {
                     height: 10px;
@@ -1314,12 +1545,21 @@
               display: flex;
               justify-content: space-between;
               align-items: center;
-              margin-bottom: 20px;
+              margin-bottom: 10px;
 
               h4 {
                 color: $fonts-color;
                 font-size: 18px;
                 font-weight: 400;
+
+                @include bp(sm-max) {
+                  font-size: 16px;
+                }
+              }
+              .mat-mdc-form-field {
+                .mdc-text-field--filled {
+                  padding: 0;
+                }
               }
             }
             .review-wrapper {
@@ -1329,7 +1569,7 @@
                 .review-heading-wrapper {
                   display: flex;
                   align-items: center;
-                  margin: 0 -8px 10px;
+                  margin: 0 -8px 12px;
                   .image-block {
                     padding: 0 8px;
                     img {
@@ -1337,6 +1577,11 @@
                       object-fit: cover;
                       height: 70px;
                       width: 70px;
+
+                      @include bp(sm-max) {
+                        height: 55px;
+                        width: 55px;
+                      }
                     }
                   }
                   .review-heading {
@@ -1357,9 +1602,9 @@
                     }
                     .rating-star {
                       display: flex;
-                      margin: 0 -2px;
+                      margin: 0 -1px;
                       li {
-                        padding: 0 2px;
+                        padding: 0 1px;
                       }
                     }
                   }
@@ -1368,14 +1613,22 @@
                   font-size: 16px;
                   color: $heading-color;
                   line-height: 1.625;
+                  @include bp(xs-max) {
+                    font-size: 14px;
+                  }
                 }
               }
             }
           }
         }
         .photos-and-video-block {
-          margin-bottom: 30px;
+          padding-bottom: 30px;
+
+          @include bp(lg-max) {
+            padding: 0;
+          }
           .title-block {
+            margin-bottom: 9px;
             .swiper-navigation {
               .arrow.swiper-button-disabled {
                 opacity: 0.4;
@@ -1387,7 +1640,14 @@
             margin: 0 -10px;
             .slide {
               padding: 0 10px;
+              height: auto;
               .image-block {
+                height: 100%;
+                width: 100%;
+                video {
+                  height: 100%;
+                  width: 100%;
+                }
                 img {
                   width: 100%;
                 }
@@ -1398,40 +1658,62 @@
       }
     }
     .schedule-appointment-block {
-      flex: 0 0 35%;
-      max-width: 35%;
+      flex: 0 0 38%;
+      max-width: 38%;
       padding: 0 15px;
+      @include bp(lg-max) {
+        flex: 0 0 100%;
+        max-width: 100%;
+        padding: 0;
+      }
 
       .form-group {
         label {
           font-size: 16px;
-          margin-bottom: 6px;
+          margin-bottom: 9px;
           display: inline-block;
           color: $heading-color;
+          @include bp(xs-max) {
+            font-size: 14px;
+          }
         }
         .form-control {
           height: 60px;
           background: $white;
           border-radius: 8px;
           border: 1px solid $border-color-4;
-          margin-bottom: 20px;
+          margin-bottom: 23px;
           width: 100%;
           display: block;
           overflow: hidden;
+          @include bp(xs-max) {
+            height: 50px;
+          }
         }
       }
 
       .schedule-appointment-wrapper {
         position: sticky;
         top: 150px;
+        padding-top: 30px;
         .schedule-appointment-inner {
           padding: 20px;
           background-color: $bg-color-3;
-          margin-bottom: 30px;
+          margin-bottom: 34px;
+          @include bp(xs-max) {
+            padding: 10px;
+          }
           h2 {
             font-size: 24px;
             margin-bottom: 20px;
             text-transform: capitalize;
+            @include bp(lgl-max) {
+              font-size: 22px;
+            }
+
+            @include bp(smd-max) {
+              font-size: 20px;
+            }
           }
           .radio-button-listing {
             display: flex;
@@ -1450,6 +1732,7 @@
                   position: absolute;
                   width: 100%;
                   height: 100%;
+                  cursor: pointer;
                   opacity: 0;
                   z-index: 1;
 
@@ -1471,6 +1754,13 @@
                   justify-content: center;
                   border-radius: 6px;
                   transition: $transition;
+                  @include bp(xs-max) {
+                    font-size: 14px;
+                    padding: 0 10px;
+                  }
+                  @include bp(xxs-max) {
+                    font-size: 13px;
+                  }
                 }
               }
             }
@@ -1480,13 +1770,16 @@
               display: flex;
               justify-content: space-between;
               align-items: center;
-              margin-bottom: 6px;
+              margin-bottom: 10px;
               span {
                 font-size: 16px;
                 color: $heading-color;
+                @include bp(xs-max) {
+                  font-size: 14px;
+                }
               }
               .slot-time {
-                font-size: 12px;
+                font-size: 14px;
                 color: $heading-color;
               }
             }
@@ -1494,32 +1787,33 @@
               background-color: $white;
               border: 1px solid $border-color-4;
               border-radius: 8px;
-              margin-bottom: 20px;
+              margin-bottom: 23px;
               .slot-inner {
                 padding: 15px;
 
                 .thumbs-slider-outer {
                   border-bottom: 1px solid $border-color-4;
-                  margin-bottom: 15px;
+                  margin-bottom: 16px;
                   position: relative;
 
                   .swiper-navigation {
                     .custom-prev-slot {
-                      bottom: 26px;
-                      left: 0;
+                      bottom: 24px;
+                      left: -2px;
                       position: absolute;
                       z-index: 10;
                     }
                     .custom-next-slot {
-                      bottom: 26px;
-                      right: 0;
+                      bottom: 24px;
+                      right: -2px;
                       position: absolute;
                       z-index: 10;
                     }
                   }
                   .slide {
-                    padding: 0 15px 15px;
+                    padding: 0 15px 10px;
                     cursor: pointer;
+                    text-align: center;
                     span {
                       display: block;
                     }
@@ -1567,12 +1861,18 @@
                           font-size: 13px;
                           font-weight: 400;
                           color: $heading-color;
-                          padding: 10px 5px;
+                          padding: 11px 5px;
                           border: 1px solid $border-color;
                           height: 100%;
                           width: 100%;
+                          text-align: center;
                           display: inline-block;
                           transition: $transition;
+
+                          @include bp(xs-max) {
+                            padding: 5px;
+                            font-size: 12px;
+                          }
                         }
 
                         &.dash {
@@ -1606,14 +1906,14 @@
 
             .image-block {
               text-align: center;
-              margin-bottom: 15px;
+              margin-bottom: 13px;
             }
             p {
               font-size: 18px;
               line-height: 1.4;
               text-align: center;
               color: $heading-color;
-              margin-bottom: 20px;
+              margin-bottom: 24px;
             }
           }
         }

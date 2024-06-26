@@ -96,6 +96,18 @@ export class DoctorDetailsComponent implements AfterViewInit {
       });
     }
   }
+
+  readMoreText = "Read More";
+  toggleReadMore() {
+    document.querySelector(".overview-block .more-less")?.classList.toggle("visible");
+    if (document.querySelector(".overview-block .more-less.visible")) {
+      this.readMoreText = "Read Less";
+    }
+    else {
+      this.readMoreText = "Read More";
+    }
+
+  }
   constructor() {
     register();
     this.selectedValue = 'option1';
@@ -104,6 +116,7 @@ export class DoctorDetailsComponent implements AfterViewInit {
   config: SwiperOptions = {
     spaceBetween: '0',
     slidesPerView: 1,
+
     navigation: {
       nextEl: '.custom-next-location',
       prevEl: '.custom-prev-location',
@@ -117,7 +130,13 @@ export class DoctorDetailsComponent implements AfterViewInit {
 
   config_2: SwiperOptions = {
     spaceBetween: '0',
-    slidesPerView: 3,
+    slidesPerView: 2,
+    breakpoints: {
+      479: {
+        slidesPerView: 3,
+      }
+    },
+
     navigation: {
       nextEl: '.custom-next-photos',
       prevEl: '.custom-prev-photos',
@@ -126,8 +145,16 @@ export class DoctorDetailsComponent implements AfterViewInit {
 
   config_3: SwiperOptions = {
     spaceBetween: '0',
-    slidesPerView: 4,
-    // freeMode: true,
+    slidesPerView: 2,
+    breakpoints: {
+      379: {
+        slidesPerView: 3,
+      },
+      479: {
+        slidesPerView: 4,
+      }
+    },
+
     navigation: {
       nextEl: '.custom-next-slot',
       prevEl: '.custom-prev-slot',

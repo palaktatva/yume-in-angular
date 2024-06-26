@@ -33,6 +33,7 @@
       font-size: 16px;
       text-transform: uppercase;
       transition: $transition;
+      box-shadow: none;
 
       @include bp(sm-max) {
         min-height: 40px;
@@ -77,22 +78,35 @@
 
 .lg-btn {
   &.mat-mdc-raised-button:not(:disabled) {
-    min-height: 56px;
+    height: 56px;
 
     @include bp(sm-max) {
-      min-height: 48px;
+      height: 48px;
     }
   }
 }
 
 .bg-btn {
   width: 100%;
-  height: 60px !important;
+
   &.mat-mdc-unelevated-button {
     &:not(:disabled) {
       border-radius: 8px;
       font-size: 20px;
       font-weight: 500;
+      height: 60px;
+      font-family: $primary-fonts;
+
+      @include bp(lg-max) {
+        height: 55px;
+      }
+      @include bp(smd-max) {
+        font-size: 18px;
+        height: 50px;
+      }
+      @include bp(sm-max) {
+        font-size: 16px;
+      }
     }
   }
 }
@@ -138,6 +152,7 @@
     font-style: normal;
     span {
       vertical-align: middle;
+      line-height: 1.6;
     }
     img {
       display: inline-block;
@@ -222,8 +237,22 @@
     }
   }
 }
-a.mdc-button {
-  padding: 0 40px 0 0;
+
+.read-more-less {
+  display: block;
+  margin-top: 10px;
+  color: $heading-color;
+  font-weight: 500;
+  font-size: 16px;
+  cursor: pointer;
+  transition: $transition;
+  @include bp(xs-max) {
+    font-size: 14px;
+  }
+  &:hover {
+    color: $secondary-color;
+    text-decoration: underline;
+  }
 }
 
 .mat-mdc-form-field {
@@ -266,6 +295,12 @@ a.mdc-button {
 
       .mat-mdc-select-value {
         padding: 0 40px 0 36px;
+        .mat-mdc-select-placeholder {
+          font-size: 16px;
+          @include bp(xs-max) {
+            font-size: 14px;
+          }
+        }
       }
     }
   }
@@ -297,6 +332,10 @@ a.mdc-button {
       background-color: $white;
       .mdc-text-field__input {
         color: $fonts-color;
+        font-size: 16px;
+        @include bp(xs-max) {
+          font-size: 14px;
+        }
       }
       .mdc-line-ripple {
         &::before {
@@ -410,6 +449,9 @@ a.mdc-button {
       .mdc-list-item__primary-text {
         color: $fonts-color;
         font-family: $primary-fonts !important;
+        @include bp(xs-max) {
+          font-size: 14px;
+        }
       }
 
       &.mdc-list-item--selected {
@@ -619,12 +661,23 @@ a.mdc-button {
   .mat-expansion-panel {
     border: 1px solid $border-color-1;
     border-radius: 8px !important;
-    margin-bottom: 20px;
-
+    &:not(:last-child) {
+      margin-bottom: 20px;
+    }
     .mat-expansion-panel-header {
       font-family: $primary-fonts;
-      padding: 0 19px;
+      padding: 0 28px 0 19px;
       height: 60px;
+
+      &:not([aria-disabled="true"]) {
+        &:hover {
+          background: $white !important;
+        }
+      }
+
+      @include bp(lg-max) {
+        height: 48px;
+      }
       .mat-content {
         font-size: 16px;
         color: $heading-color;
@@ -637,6 +690,7 @@ a.mdc-button {
       font-family: $primary-fonts;
       .mat-expansion-panel-body {
         padding: 0 20px 19px;
+
         .mat-expansion-panel-header-description {
           flex-direction: column;
           align-items: flex-start;
@@ -658,6 +712,39 @@ a.mdc-button {
   }
 }
 
+.distance-language-listing {
+  .mat-accordion {
+    @include bp(lg-max) {
+      display: flex;
+      flex-wrap: wrap;
+      margin: 0 -13px 20px;
+      @include bp(xxs-max) {
+        margin: 0;
+      }
+    }
+    .expansion-panel {
+      padding-bottom: 20px;
+
+      @include bp(lg-max) {
+        flex: 0 0 50%;
+        max-width: 50%;
+        padding: 0 13px;
+
+        @include bp(xxs-max) {
+          flex: 0 0 100%;
+          max-width: 100%;
+          padding: 0 0 20px;
+        }
+      }
+      .mat-expansion-panel {
+        width: 100%;
+      }
+      .mat-expansion-panel-spacing {
+        margin: 0;
+      }
+    }
+  }
+}
 .mat-mdc-checkbox {
   .mdc-form-field {
     padding-bottom: 15px;
@@ -668,6 +755,7 @@ a.mdc-button {
     .mat-mdc-checkbox-touch-target {
       height: 20px;
       width: 20px;
+      border-radius: 3px;
       background-color: $grey;
     }
     .mdc-checkbox__native-control {
@@ -692,6 +780,13 @@ a.mdc-button {
           .mdc-checkbox__background {
             background-color: $pink_color !important;
             border-color: $pink_color !important;
+          }
+        }
+        ~ .mdc-checkbox__background {
+          .mdc-checkbox__checkmark {
+            height: 13px;
+            top: 3px;
+            color: $white;
           }
         }
       }
@@ -728,12 +823,14 @@ a.mdc-button {
     }
   }
 }
+
 .tabing-sorting-wrapper {
   .mat-mdc-tab-group {
     &.mat-mdc-tab-group-stretch-tabs > {
       .mat-mdc-tab-header {
         .mat-mdc-tab-labels {
           margin: 0 -10px 0;
+          border-bottom: 1px solid $border-color-2;
           .mat-mdc-tab {
             padding: 0 10px;
             flex-grow: 0;
@@ -742,20 +839,20 @@ a.mdc-button {
               .mdc-tab__text-label {
                 color: $pink_color;
                 font-weight: 500;
+                border-bottom: 3px solid $pink_color;
               }
 
               &:focus {
                 .mdc-tab-indicator__content--underline {
-                  border: 2px solid $pink_color;
-                  width: calc(100% - 20px);
+                  border-bottom: 3px solid $pink_color;
                 }
               }
             }
             .mdc-tab__text-label {
-              font-size: 14px;
+              font-size: 16px;
               font-weight: 400;
               line-height: 2;
-              padding-bottom: 20px;
+              padding-bottom: 12px;
               font-family: $primary-fonts;
             }
 
@@ -763,6 +860,7 @@ a.mdc-button {
               width: calc(100% - 20px);
               border: $pink_color;
               border: 2px solid $pink_color;
+              display: none;
             }
           }
         }
@@ -790,7 +888,11 @@ a.mdc-button {
         position: relative;
         .mat-mdc-select {
           .mat-mdc-select-value {
-            padding: 0 14px 0 64px;
+            padding: 0 14px 0 57px;
+
+            @include bp(sm-max) {
+              padding-left: 65px;
+            }
           }
           .mat-mdc-select-arrow-wrapper {
             .mat-mdc-select-arrow {
@@ -819,6 +921,11 @@ a.mdc-button {
   label {
     position: absolute;
     color: $fonts-color;
+    top: 4px;
+    @include bp(sm-max) {
+      top: 15px;
+      left: 8px;
+    }
   }
 }
 
@@ -829,7 +936,9 @@ a.mdc-button {
         height: 60px;
         padding: 16px 20px 20px;
         border-radius: 8px;
-
+        @include bp(sm-max) {
+          padding: 10px 15px;
+        }
         .mat-expansion-indicator {
           svg {
             fill: $grey1;
@@ -844,6 +953,7 @@ a.mdc-button {
             em {
               span {
                 color: $pink_color !important;
+                font-weight: 500 !important;
               }
               img {
                 filter: grayscale(0) !important;
@@ -863,6 +973,10 @@ a.mdc-button {
 
       .mat-expansion-panel-body {
         padding: 0 24px 10px;
+
+        @include bp(sm-max) {
+          padding: 0 15px 10px;
+        }
       }
     }
   }
@@ -914,6 +1028,9 @@ a.mdc-button {
           .mat-mdc-select-placeholder {
             color: $grey2;
             font-size: 16px;
+            @include bp(xs-max) {
+              font-size: 14px;
+            }
           }
         }
         .mat-mdc-select-arrow-wrapper {
@@ -942,28 +1059,92 @@ a.mdc-button {
 .select-panel-1.mat-select-panel {
   font-size: 40px !important;
 }
-// .cdk-overlay-container {
-//   .select-panel-1 {
-//     &.mat-select-panel {
-//       .mat-mdc-option {
-//         &.mdc-list-item--selected {
-//           &:not(.mdc-list-item--disabled) {
-//             .mdc-list-item__primary-text {
-//               color: $primary-color;
-//             }
-//           }
-//         }
-//       }
-//     }
-//   }
-// }
-// .cdk-overlay-pane
-//   .mat-mdc-select-panel
-//   .mat-mdc-option.mdc-list-item--selected:not(.mdc-list-item--disabled)
-//   .mdc-list-item__primary-text {
-//   color: #edba36;
-// }
 
 .mat-mdc-tab-header-pagination {
   display: none !important;
+}
+
+.cdk-overlay-pane {
+  .pink-effect {
+    &.mat-mdc-select-panel {
+      .mat-mdc-option {
+        &:hover {
+          background-color: $pink_color;
+          .mdc-list-item__primary-text {
+            color: white;
+          }
+        }
+        .mdc-list-item__primary-text {
+          color: $fonts-color;
+          font-family: $primary-fonts !important;
+          @include bp(xs-max) {
+            font-size: 14px;
+          }
+        }
+        &.mdc-list-item--selected {
+          &:not(.mdc-list-item--disabled) {
+            .mdc-list-item__primary-text {
+              color: $pink_color;
+            }
+
+            &:not(.mat-mdc-option-multiple) {
+              background-color: $white;
+            }
+
+            &:hover {
+              background-color: $pink_color;
+
+              .mdc-list-item__primary-text {
+                color: $white;
+              }
+            }
+          }
+        }
+
+        &.mat-mdc-option-active {
+          &:hover {
+            background-color: $pink_color;
+            color: $white;
+          }
+        }
+      }
+    }
+  }
+}
+.cdk-overlay-pane {
+  .purple-effect {
+    &.mat-mdc-select-panel {
+      .mat-mdc-option {
+        &:hover {
+          background-color: $secondary-color;
+        }
+        &.mdc-list-item--selected {
+          &:not(.mdc-list-item--disabled) {
+            .mdc-list-item__primary-text {
+              color: $secondary-color;
+            }
+
+            &:not(.mat-mdc-option-multiple) {
+              background-color: $white;
+            }
+
+            &:hover {
+              background-color: $secondary-color;
+
+              .mdc-list-item__primary-text {
+                color: $white;
+              }
+            }
+          }
+        }
+
+        &.mat-mdc-option-active {
+          &:hover {
+            background-color: $secondary-color;
+            color: $white;
+          }
+        }
+      }
+    }
+  }
 }

@@ -5,8 +5,8 @@ import { DoctorDetailsComponent } from './pages/doctor-details/doctor-details.co
 
 export const routes: Routes = [
 
-    { path: "doctor_listing", component: DoctorListingComponent, title: "Doctor-Listing" },
-    { path: "home", component: HomeComponent, title: "Home-page" },
-    { path: "", component: HomeComponent, title: "Home-page" },
-    { path: "doctor_details", component: DoctorDetailsComponent, title: "doctor-details" }
+    { path: "doctor-listing", component: DoctorListingComponent, title: "Doctor Listing" },
+    { path: "home", component: HomeComponent, title: "Home" },
+    { path: "", component: HomeComponent, title: "Home" },
+    { path: "doctor-details", component: DoctorDetailsComponent, title: "Doctor Details" }
 ];

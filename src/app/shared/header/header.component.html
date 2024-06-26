@@ -1,31 +1,39 @@
 <header class="site-header">
+  <mat-toolbar color="primary">
+    <div class="container">
+      <div class="header-wrapper">
+        <a href="#" title="logo">
+          <img src="assets/images/yume-logo.svg" alt="" />
+        </a>
 
-
-    <mat-toolbar color="primary">
-        <div class="container">
-            <div class="header-wrapper">
-                <a href="#" title="logo">
-                    <img src="assets/images/yume-logo.svg" alt="">
-                </a>
-
-                <ul class="nav-listing">
-                    <li><a href="#" title="About Us" mat-button disableRipple>About Us</a></li>
-                    <li><a href="#" title="Contact Us" mat-button disableRipple>Contact Us</a></li>
-                    <li><a href="#" title="Medical Professionals" mat-raised-button class="spaced-button yellow-btn">MEDICAL
-                            PROFESSIONALS</a>
-                    </li>
-                    <li><a href="#" title="Patient" mat-raised-button class="yellow-btn " >PATIENT</a></li>
-                </ul>
-                <div class="hamburger-icon" (click)="toggleClass()">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
-
-            </div>
+        <ul class="nav-listing">
+          <li>
+            <a href="#" title="About Us">About Us</a>
+          </li>
+          <li>
+            <a href="#" title="Contact Us">Contact Us</a>
+          </li>
+          <li>
+            <a
+              href="#"
+              title="Medical Professionals"
+              mat-raised-button
+              class="spaced-button yellow-btn"
+              >MEDICAL PROFESSIONALS</a
+            >
+          </li>
+          <li>
+            <a href="#" title="Patient" mat-raised-button class="yellow-btn"
+              >PATIENT</a
+            >
+          </li>
+        </ul>
+        <div class="hamburger-icon" (click)="toggleClass()">
+          <span></span>
+          <span></span>
+          <span></span>
         </div>
-    </mat-toolbar>
-
-
-
+      </div>
+    </div>
+  </mat-toolbar>
 </header>
