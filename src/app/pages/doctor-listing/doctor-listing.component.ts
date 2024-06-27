@@ -8,7 +8,6 @@ import { MatExpansionModule } from '@angular/material/expansion';
 import { MatTabsModule } from '@angular/material/tabs';
 import { DoctorDetailsComponent } from '../doctor-details/doctor-details.component';
 import { RouterModule } from '@angular/router';
-import { Router } from '@angular/router';
 
 
 @Component({
@@ -35,5 +34,8 @@ export class DoctorListingComponent {
   constructor() {
     this.selectedValue = 'option1';
   }
-
+  toggleClass(){
+    document.querySelector("body")?.classList.toggle("open-slider");
+    document.querySelector("html")?.classList.toggle("open-slider");
+  }
 }

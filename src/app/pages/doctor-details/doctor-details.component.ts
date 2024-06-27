@@ -31,9 +31,9 @@ Swiper.use([Navigation, Thumbs]);
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
 export class DoctorDetailsComponent implements AfterViewInit {
+
   currentIndex: number = 1;
   selectedValue: string;
-
   @ViewChild('locationSlider') locationSwiperRef!: ElementRef<
     HTMLElement & { swiper: Swiper; initialize: () => void }
   >;
@@ -51,8 +51,8 @@ export class DoctorDetailsComponent implements AfterViewInit {
   customNext!: ElementRef;
   @ViewChild('customPrev', { read: ElementRef })
   customPrev!: ElementRef;
-
-
+  @ViewChild('videoElement', { static: false }) videoElementRef!: ElementRef<HTMLVideoElement>;
+  videoElement!: HTMLVideoElement;
 
   @HostListener('window:scroll', ['$event'])
   onWindowScroll(event: Event) {
@@ -191,5 +191,21 @@ export class DoctorDetailsComponent implements AfterViewInit {
       this.slotsliderSwiperRef.nativeElement.initialize();
     }
     this.bindNavigationLinks();
+    this.videoElement = this.videoElementRef.nativeElement;
   }
+
+  ngOnInit(){
+    window.scrollTo(0, 0)
+  }
+  playVideo(): void {
+    if (this.videoElement) {
+      this.videoElement.controls = true;
+      this.videoElement.play();
+      document.querySelector(".play-btn")?.classList.toggle("play-video");
+    }
+    
+  }
+  
+  
+
 }

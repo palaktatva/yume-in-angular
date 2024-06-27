@@ -1,14 +1,20 @@
 <div class="doctor-listing-section">
   <div class="container">
     <div class="doctor-listing-wrapper">
+
       <div class="more-filter-block">
         <div class="title-block">
-          <h2>More Filter</h2>
+          <div class="title">
+            <img src="../../../assets/images/filter.gif" alt="filter" (click)="toggleClass()">
+            <h2>More Filter</h2>
+          </div>
+         
           <div class="btn-wrapper">
             <button mat-button class="black-btn sm-btn">CLEAR ALL</button>
           </div>
         </div>
         <div class="distance-language-listing">
+            <span class="close-btn" (click)="toggleClass()" >close</span>
           <mat-accordion multi>
             <div class="expansion-panel">
               <mat-expansion-panel>

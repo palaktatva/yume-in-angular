@@ -66,7 +66,9 @@
   z-index: 1400;
   transition: all 0.5s;
   background-color: $secondary-color;
-
+  @include bp(lg-max) {
+    padding: 15px 0;
+  }
   .sticky-header & {
     padding: 15px 0;
     background-color: $secondary-color;
@@ -89,10 +91,11 @@
         right: 0;
         top: 0;
         transition: all 0.5s;
-        width: 350px;
+        max-width: 350px;
+        width: 100%;
         background-color: $white;
         padding-top: 80px;
-        box-shadow: 0 3px 6px $box-shadow-color;
+        box-shadow: 0px 2px 11px 3px $box-shadow-color;
         display: block;
         bottom: 0;
       }
@@ -142,7 +145,7 @@
 
     .hamburger-icon {
       display: none;
-      min-height: 55px;
+      min-height: 46px;
 
       @include bp(lg-max) {
         display: block;
@@ -816,7 +819,11 @@
 }
 
 .doctor-listing-section {
-  padding: 160px 0 0px;
+  padding: 140px 0 0px;
+
+  @include bp(lg-max){
+    padding: 130px 0 0px;
+  }
   .container {
     max-width: 1250px;
   }
@@ -837,7 +844,20 @@
       flex: 0 0 29.5%;
       max-width: 29.5%;
       padding: 0 15px;
+      .title {
+        display: flex;
+        @include bp(lg-max) {
+          align-items: flex-end;
+        }
+        img {
+          display: none;
+          cursor: pointer;
 
+          @include bp(lg-max) {
+            display: block;
+          }
+        }
+      }
       @include bp(lg-max) {
         flex: 0 0 100%;
         max-width: 100%;
@@ -856,6 +876,34 @@
       }
 
       .distance-language-listing {
+        .close-btn{
+          width: 100%;
+          text-align: right;
+          font-size: 16px;
+          font-weight: 500;
+          color: $pink_color;
+          margin-bottom: 10px;
+          display: block;
+          cursor: pointer;
+        }
+        @include bp(lg-max) {
+          transform: translate(-100%);
+          position: fixed;
+          left: 0;
+          transition: 0.5s all;
+          max-width: 350px;
+          width: 100%;
+          top: 93px;
+          right: 0;
+          bottom: 0;
+          background: $white;
+          z-index: 1100;
+          box-shadow: 0px 2px 11px 3px $box-shadow-color;
+          padding: 40px 20px 20px;
+        }
+        .open-slider & {
+          transform: translate(0%);
+        }
         ul {
           padding: 20px;
           border: 1px solid $border-color-2;
@@ -1208,7 +1256,7 @@
 }
 
 .doctor-details-section {
-  padding: 180px 0 50px;
+  padding: 175px 0 50px;
 
   @include bp(lg-max) {
     padding: 160px 0 40px;
@@ -1243,6 +1291,9 @@
         .card-inner {
           border: none;
           padding: 0;
+          .doctor-info-block {
+            padding: 0;
+          }
         }
         address {
           margin-bottom: 8px;
@@ -1390,6 +1441,7 @@
           .overview-accordion {
             em {
               font-style: normal;
+              display: flex;
               img {
                 vertical-align: middle;
                 margin-right: 15px;
@@ -1641,15 +1693,33 @@
             .slide {
               padding: 0 10px;
               height: auto;
-              .image-block {
-                height: 100%;
-                width: 100%;
+              .img-video-block {
+                position: relative;
+                top: 0;
+                border-radius: 25px;
+                overflow: hidden;
+                left: 0;
+                padding-bottom: 103%;
+                .play-btn {
+                  img {
+                    cursor: pointer;
+                    position: absolute;
+                    left: 50%;
+                    top: 50%;
+                    transform: translate(-50%, -50%);
+                    height: unset;
+                  }
+                  &.play-video{
+                    display: none;
+                  }
+                }
                 video {
+                  position: absolute;
                   height: 100%;
-                  width: 100%;
                 }
                 img {
-                  width: 100%;
+                  position: absolute;
+                  height: 100%;
                 }
               }
             }
@@ -1833,7 +1903,7 @@
                   .slot-time-block {
                     display: flex;
                     flex-wrap: wrap;
-                    margin: 0 -5px -15px;
+                    margin: 0 -4px -15px;
                     .time-block {
                       flex: 0 0 25%;
                       max-width: 25%;
